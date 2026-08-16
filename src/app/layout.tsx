@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Bansal Enterprises | Punjab\'s Leading Consumer Electronics Distribution Network',
-  description: 'Established in 2017 by Rakesh Bansal. Authorised regional distributor for Amstrad, Tomashi, Kenstar, Liebherr, KAFF, and Nova Max supplying retailers, dealers, and institutional partners across Bathinda, Mansa, Muktsar, Faridkot, & Fazilka.',
+  title: "Bansal Enterprises | Consumer Electronics Distribution in Punjab",
+  description:
+    "Bansal Enterprises is an authorised regional distributor of consumer electronics and home appliances, serving retail partners across Punjab.",
   keywords: [
     'Bansal Enterprises',
     'Punjab electronics distributor',
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Bansal Enterprises | Punjab\'s Leading Consumer Electronics Distribution Network',
     description: 'Authorised regional distributor for Amstrad, Tomashi, Kenstar, Liebherr, KAFF, and Nova Max supplying 100+ retail partners across 5 districts.',
-    url: 'https://bansalenterprises.com',
+    url: 'https://bansal-enterprises.vercel.app',
     siteName: 'Bansal Enterprises',
     locale: 'en_IN',
     type: 'website',
