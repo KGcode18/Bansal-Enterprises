@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: "Bansal Enterprises | Consumer Electronics Distribution in Punjab",
+  title: "Bansal Enterprises | Rakesh Bansal | Consumer Electronics Distribution in Punjab",
   description:
     "Bansal Enterprises is an authorised regional distributor of consumer electronics and home appliances, serving retail partners across Punjab.",
   keywords: [
@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     'Fazilka electronics distributor',
     'Abohar electronics wholesaler',
     'B2B electronics supply Bathinda',
+    'Rakesh Bansal',
   ],
   authors: [{ name: 'Bansal Enterprises' }],
   creator: 'Bansal Enterprises',
