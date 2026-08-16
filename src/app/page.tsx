@@ -19,9 +19,11 @@ import { Contact } from '@/components/sections/Contact';
 import { Footer } from '@/components/layout/Footer';
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton';
 import { EnquiryModal } from '@/components/ui/EnquiryModal';
+import { DistributionTeamModal } from '@/components/ui/DistributionTeamModal';
 
 export default function Home() {
   const [enquiryModalOpen, setEnquiryModalOpen] = useState(false);
+  const [teamModalOpen, setTeamModalOpen] = useState(false);
   const [enquiryType, setEnquiryType] = useState<'wholesale' | 'retail'>('wholesale');
 
   const handleOpenEnquiry = (type: 'wholesale' | 'retail') => {
@@ -29,13 +31,17 @@ export default function Home() {
     setEnquiryModalOpen(true);
   };
 
+  const handleOpenTeamModal = () => {
+    setTeamModalOpen(true);
+  };
+
   return (
     <main className="min-h-screen bg-navy-900 text-slate-900 overflow-x-hidden selection:bg-gold-500 selection:text-navy-950">
       {/* Navigation Bar */}
-      <Navbar onOpenEnquiry={handleOpenEnquiry} />
+      <Navbar onOpenEnquiry={handleOpenEnquiry} onOpenTeamModal={handleOpenTeamModal} />
 
       {/* 1. Hero Section */}
-      <Hero onOpenEnquiry={handleOpenEnquiry} />
+      <Hero onOpenEnquiry={handleOpenEnquiry} onOpenTeamModal={handleOpenTeamModal} />
 
       {/* 2. Trust & Experience Bar */}
       <TrustBar />
@@ -56,7 +62,7 @@ export default function Home() {
       <Wholesale onOpenEnquiry={handleOpenEnquiry} />
 
       {/* 8. Corporate Hub & Experience Centre */}
-      <Retail onOpenEnquiry={handleOpenEnquiry} />
+      <Retail onOpenEnquiry={handleOpenEnquiry} onOpenTeamModal={handleOpenTeamModal} />
 
       {/* 9. Distribution Advantages */}
       <Finance />
@@ -77,7 +83,7 @@ export default function Home() {
       <Contact />
 
       {/* Footer */}
-      <Footer onOpenEnquiry={handleOpenEnquiry} />
+      <Footer onOpenEnquiry={handleOpenEnquiry} onOpenTeamModal={handleOpenTeamModal} />
 
       {/* Floating WhatsApp Action */}
       <WhatsAppButton />
@@ -87,6 +93,12 @@ export default function Home() {
         isOpen={enquiryModalOpen}
         onClose={() => setEnquiryModalOpen(false)}
         initialType={enquiryType}
+      />
+
+      {/* Distribution Team Contact Modal (Rajiv Bansal & Vijay Sharma) */}
+      <DistributionTeamModal
+        isOpen={teamModalOpen}
+        onClose={() => setTeamModalOpen(false)}
       />
     </main>
   );

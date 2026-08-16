@@ -2,15 +2,24 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, ArrowRight, ShieldCheck, Building2, Users } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, ArrowRight, Building2, Users } from 'lucide-react';
 import Image from 'next/image';
 import { Button } from '../ui/Button';
 
 interface ExperienceHubProps {
   onOpenEnquiry: (type: 'wholesale' | 'retail') => void;
+  onOpenTeamModal?: () => void;
 }
 
-export const Retail: React.FC<ExperienceHubProps> = ({ onOpenEnquiry }) => {
+export const Retail: React.FC<ExperienceHubProps> = ({ onOpenEnquiry, onOpenTeamModal }) => {
+  const handleTeamClick = () => {
+    if (onOpenTeamModal) {
+      onOpenTeamModal();
+    } else {
+      onOpenEnquiry('retail');
+    }
+  };
+
   return (
     <section className="py-20 bg-navy-950 text-white relative border-b border-navy-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -79,7 +88,9 @@ export const Retail: React.FC<ExperienceHubProps> = ({ onOpenEnquiry }) => {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-gold-400 shrink-0" />
-                <a href="tel:9988096592" className="hover:text-gold-400 font-mono font-semibold transition-colors">+91 99880 96592</a>
+                <button onClick={handleTeamClick} className="hover:text-gold-400 font-mono font-semibold transition-colors text-left">
+                  +91 79735 41285 / +91 99153 73302
+                </button>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-gold-400 shrink-0" />
@@ -91,15 +102,15 @@ export const Retail: React.FC<ExperienceHubProps> = ({ onOpenEnquiry }) => {
               </li>
             </ul>
 
-            <div className="pt-2">
+            <div className="pt-2 flex flex-col gap-3">
               <Button
                 variant="gold"
                 size="md"
-                onClick={() => onOpenEnquiry('wholesale')}
+                onClick={handleTeamClick}
                 icon={<ArrowRight className="w-4 h-4" />}
                 className="w-full uppercase font-bold tracking-wider shadow-gold-glow"
               >
-                Schedule Partner Meeting
+                Contact Distribution Team
               </Button>
             </div>
           </motion.div>

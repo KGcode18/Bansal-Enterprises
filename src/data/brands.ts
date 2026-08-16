@@ -4,21 +4,56 @@ export interface PartnerBrand {
   logoText: string;
   categoryTag: string;
   highlight: string;
+  websiteUrl: string;
 }
 
 export const partnerBrands: PartnerBrand[] = [
-  { id: 'samsung', name: 'Samsung', logoText: 'SAMSUNG', categoryTag: 'TV, Refrigerators, Mobile', highlight: 'Global Electronics Leader' },
-  { id: 'lg', name: 'LG Electronics', logoText: 'LG', categoryTag: 'OLED TV, Washers, AC', highlight: 'Authorized Regional Supply' },
-  { id: 'ifb', name: 'IFB Appliances', logoText: 'IFB', categoryTag: 'Washing Machines, Microwave', highlight: 'Premium Home Laundry' },
-  { id: 'voltas', name: 'Voltas', logoText: 'VOLTAS', categoryTag: 'Air Conditioners & Coolers', highlight: 'Tata Enterprise Cooling' },
-  { id: 'blue-star', name: 'Blue Star', logoText: 'BLUE STAR', categoryTag: 'Commercial & Split AC', highlight: 'Precision Cooling Solutions' },
-  { id: 'haier', name: 'Haier', logoText: 'Haier', categoryTag: 'Refrigerators & Washers', highlight: 'Smart Home Innovation' },
-  { id: 'godrej', name: 'Godrej Appliances', logoText: 'Godrej', categoryTag: 'Refrigerators & Freezers', highlight: 'Trusted Indian Brand' },
-  { id: 'panasonic', name: 'Panasonic', logoText: 'Panasonic', categoryTag: 'TV, Microwave & AC', highlight: 'Japanese Engineering' },
-  { id: 'crompton', name: 'Crompton', logoText: 'Crompton', categoryTag: 'Fans, Coolers & Geysers', highlight: 'Consumer Electricals' },
-  { id: 'havells', name: 'Havells', logoText: 'HAVELLS', categoryTag: 'Small Appliances & Fans', highlight: 'Electrical Standards' },
-  { id: 'whirlpool', name: 'Whirlpool', logoText: 'Whirlpool', categoryTag: 'Washers & Refrigerators', highlight: 'Global Home Appliances' },
-  { id: 'liebherr', name: 'Liebherr', logoText: 'LIEBHERR', categoryTag: 'Luxury Refrigeration', highlight: 'German Precision Cooling' },
-  { id: 'kaff', name: 'KAFF', logoText: 'KAFF', categoryTag: 'Built-in Hobs & Chimneys', highlight: 'Kitchen Appliances' },
-  { id: 'symphony', name: 'Symphony', logoText: 'Symphony', categoryTag: 'Desert & Air Coolers', highlight: 'Cooling Innovation' },
+  {
+    id: 'kaff',
+    name: 'KAFF',
+    logoText: 'KAFF',
+    categoryTag: 'Kitchen Chimneys, Built-in Hobs & Ovens',
+    highlight: 'Premium Kitchen Appliances',
+    websiteUrl: 'https://www.kaff.in',
+  },
+  {
+    id: 'amstrad',
+    name: 'Amstrad',
+    logoText: 'AMSTRAD',
+    categoryTag: 'Air Conditioners, Smart TVs & Washing Machines',
+    highlight: 'Next-Gen Consumer Electronics',
+    websiteUrl: 'https://amstradworld.com/',
+  },
+  {
+    id: 'tomashi',
+    name: 'Tomashi',
+    logoText: 'TOMASHI',
+    categoryTag: 'Smart LED TVs, Audio Systems & Home Appliances',
+    highlight: 'Authorised Regional Distribution',
+    websiteUrl: 'https://www.tomashiindia.in/',
+  },
+  {
+    id: 'kenstar',
+    name: 'Kenstar',
+    logoText: 'KENSTAR',
+    categoryTag: 'Air Coolers, Water Heaters & Home Appliances',
+    highlight: 'Trusted Home Comfort',
+    websiteUrl: 'https://www.kenstar.in',
+  },
+  {
+    id: 'liebherr',
+    name: 'Liebherr',
+    logoText: 'LIEBHERR',
+    categoryTag: 'Luxury German Refrigerators',
+    highlight: 'German Precision Cooling',
+    websiteUrl: 'https://home.liebherr.com',
+  },
+  {
+    id: 'nova-max',
+    name: 'Nova Max',
+    logoText: 'NOVA MAX',
+    categoryTag: 'Heavy Duty Air Coolers & Air Cooling',
+    highlight: 'Heavy Duty Air Cooling',
+    websiteUrl: 'https://novamaxindia.com',
+  },
 ];

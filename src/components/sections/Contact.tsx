@@ -113,6 +113,7 @@ export const Contact: React.FC = () => {
                     <option value="Mansa">Mansa</option>
                     <option value="Sri Muktsar Sahib">Sri Muktsar Sahib</option>
                     <option value="Faridkot">Faridkot</option>
+                    <option value="Fazilka">Fazilka</option>
                     <option value="Other Punjab District">Other Punjab District</option>
                   </select>
                 </div>

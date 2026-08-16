@@ -6,13 +6,25 @@ import { Quote, CheckCircle2, ShieldCheck, ChevronLeft, ChevronRight, Building2,
 import Image from 'next/image';
 
 export const About: React.FC = () => {
-  // Auto-sliding B2B corporate & distribution showcase carousel
+  // Auto-sliding B2B corporate & distribution showcase carousel (Starts from Mr. Rakesh Bansal)
   const carouselItems = [
     {
       title: 'Mr. Rakesh Bansal',
-      tag: 'Founder & Managing Director',
+      tag: 'Founder & Managing Director (30+ Years Trade Experience)',
       image: '/images/rakesh-bansal.jpg',
       badge: 'Executive Leadership',
+    },
+    {
+      title: 'Kenstar Authorised Partner Certification',
+      tag: 'Kenstar Branch Manager & Area Manager presenting Authorised Distributor Certificate to Mr. Rakesh Bansal',
+      image: '/images/events/kenstar-executives.jpg',
+      badge: 'Official Authorised Distributor',
+    },
+    {
+      title: 'Amstrad Owner & Regional Leadership',
+      tag: 'Amstrad Owner, Regional Manager & Branch Manager with Mr. Rakesh Bansal',
+      image: '/images/events/amstrad-executives.jpg',
+      badge: 'Executive Brand Partnership',
     },
     {
       title: 'Central Distribution Hub & Corporate Office',
@@ -25,18 +37,6 @@ export const About: React.FC = () => {
       tag: 'Press interviews during major product launches & brand summits',
       image: '/images/events/media-interview.jpg',
       badge: 'Industry Recognition',
-    },
-    {
-      title: 'Exclusive Brand Launch Ceremonies',
-      tag: 'Official unveilings with manufacturer executives & dealer leads',
-      image: '/images/events/product-launch.jpg',
-      badge: 'Brand Partnerships',
-    },
-    {
-      title: 'Regional Dealer Conferences',
-      tag: 'Channel partner summits & distribution strategy forums',
-      image: '/images/events/brand-showcase.jpg',
-      badge: 'Dealer Network',
     },
   ];
 
@@ -79,15 +79,15 @@ export const About: React.FC = () => {
             </div>
 
             <h2 className="font-serif text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
-              Two Decades of Supply Chain & Distribution Excellence
+              30+ Years Electronics Trade Leadership
             </h2>
 
             <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-sans font-light">
-              Founded in 2004 by Mr. Rakesh Bansal, Bansal Enterprises is Southern Punjab’s premier multi-brand consumer electronics distribution partner, serving authorised retailers, dealers and institutional partners across Bathinda, Mansa, Muktsar and Faridkot for over 20 years.
+              Founded in 2017 by Mr. Rakesh Bansal—bringing over 30 years of deep consumer electronics retail and trade expertise—Bansal Enterprises is Southern Punjab’s premier multi-brand consumer electronics distribution partner, serving authorised retailers, dealers and institutional partners across Bathinda, Mansa, Muktsar, Faridkot and Fazilka.
             </p>
 
             <p className="text-slate-300 text-xs sm:text-sm leading-relaxed font-sans font-light">
-              Backed by direct manufacturer contracts with global leaders, central warehousing capacity, and dedicated regional logistics, we manage inventory depth and channel supply for over 1000 active retail business partners.
+              Backed by direct manufacturer contracts with global leaders like Amstrad, Tomashi, Kenstar, Liebherr, KAFF, and Nova Max, central warehousing capacity, and dedicated regional logistics, we manage inventory depth and channel supply for over 100 active retail business partners.
             </p>
 
             {/* Founder Quote Card */}
@@ -99,9 +99,9 @@ export const About: React.FC = () => {
               <div className="pt-2 flex items-center justify-between border-t border-navy-800">
                 <div>
                   <span className="font-serif text-base font-bold text-white block">Mr. Rakesh Bansal</span>
-                  <span className="text-[10px] text-gold-400 font-sans tracking-widest uppercase font-semibold">Founder & Managing Director</span>
+                  <span className="text-[10px] text-gold-400 font-sans tracking-widest uppercase font-semibold">Founder & Managing Director (30+ Yrs Exp.)</span>
                 </div>
-                <span className="text-[10px] font-mono text-gold-400 bg-navy-950 px-2.5 py-1 rounded border border-gold-500/20">Est. 2004</span>
+                <span className="text-[10px] font-mono text-gold-400 bg-navy-950 px-2.5 py-1 rounded border border-gold-500/20">Est. 2017</span>
               </div>
             </div>
 
@@ -120,7 +120,7 @@ export const About: React.FC = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Truck className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Daily Scheduled 4-District Dispatch</span>
+                <span>Daily Scheduled 5-District Dispatch</span>
               </div>
             </div>
           </motion.div>

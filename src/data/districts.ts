@@ -17,7 +17,7 @@ export const districtsData: DistrictCoverage[] = [
     hubs: ['Central Warehouse (Paras Ram Nagar)', 'Model Town', 'G T Road', 'Raman Mandi', 'Talwandi Sabo'],
     dealersCount: '45+ Partnered Retailers',
     wholesaleDeliveryDays: 'Same-Day / Daily Supply',
-    description: 'Central distribution hub housing Bansal Enterprises headquarters, main warehouse, and flagship retail showroom.',
+    description: 'Central distribution hub housing Bansal Enterprises headquarters, main warehouse, and corporate experience centre.',
     coordinates: { x: 45, y: 55 },
   },
   {
@@ -47,7 +47,17 @@ export const districtsData: DistrictCoverage[] = [
     hubs: ['Faridkot Main Market', 'Kotkapura', 'Jaitu'],
     dealersCount: '25+ Partnered Retailers',
     wholesaleDeliveryDays: 'Daily Scheduled Route',
-    description: 'Comprehensive wholesale reach supplying premium home appliances, ACs, and TV inventory to dealers.',
+    description: 'Comprehensive wholesale reach supplying home appliances, ACs, coolers, and TV inventory to dealers.',
     coordinates: { x: 38, y: 25 },
+  },
+  {
+    id: 'fazilka',
+    name: 'Fazilka District',
+    pinCodes: '152121 - 152128',
+    hubs: ['Fazilka City', 'Abohar', 'Jalalabad'],
+    dealersCount: '24+ Partnered Retailers',
+    wholesaleDeliveryDays: 'Daily Express Dispatch',
+    description: 'Expanding regional distribution network supplying consumer electronics and appliances to Abohar, Jalalabad, and Fazilka dealers.',
+    coordinates: { x: 18, y: 55 },
   },
 ];

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Truck, ArrowRight, Warehouse, ShieldCheck } from 'lucide-react';
+import { MapPin, Truck, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 
 interface MapProps {
@@ -15,35 +15,43 @@ export const DistributionMap: React.FC<MapProps> = ({ onOpenEnquiry }) => {
   const districtData = [
     {
       name: 'Bathinda',
-      x: 45,
+      x: 48,
       y: 55,
-      dealers: '450+ Dealers',
+      dealers: '45+ Dealers',
       frequency: 'Daily Dispatch (2x Daily)',
       coverage: 'Central Logistics Hub',
     },
     {
       name: 'Mansa',
-      x: 68,
+      x: 72,
       y: 65,
-      dealers: '220+ Dealers',
+      dealers: '28+ Dealers',
       frequency: 'Daily Morning Dispatch',
       coverage: 'Eastern Supply Corridor',
     },
     {
       name: 'Muktsar',
-      x: 30,
-      y: 45,
-      dealers: '180+ Dealers',
+      x: 34,
+      y: 42,
+      dealers: '32+ Dealers',
       frequency: 'Daily Morning Dispatch',
       coverage: 'Western Supply Corridor',
     },
     {
       name: 'Faridkot',
-      x: 38,
-      y: 25,
-      dealers: '150+ Dealers',
+      x: 42,
+      y: 22,
+      dealers: '25+ Dealers',
       frequency: 'Daily Afternoon Dispatch',
       coverage: 'Northern Supply Corridor',
+    },
+    {
+      name: 'Fazilka',
+      x: 16,
+      y: 55,
+      dealers: '24+ Dealers',
+      frequency: 'Daily Express Route',
+      coverage: 'South-Western Corridor (Abohar & Jalalabad)',
     },
   ];
 
@@ -70,7 +78,7 @@ export const DistributionMap: React.FC<MapProps> = ({ onOpenEnquiry }) => {
             </h2>
 
             <p className="text-slate-300 text-sm font-sans font-light leading-relaxed">
-              Operating from our central logistics facility in Bathinda, we maintain scheduled daily inventory dispatch across 4 primary trade districts.
+              Operating from our central logistics facility in Bathinda, we maintain scheduled daily inventory dispatch across 5 primary trade districts.
             </p>
 
             {/* Interactive District Details Panel */}
@@ -120,15 +128,16 @@ export const DistributionMap: React.FC<MapProps> = ({ onOpenEnquiry }) => {
             <div className="bg-navy-900 rounded-2xl p-6 border border-navy-800 h-80 relative overflow-hidden flex flex-col justify-between shadow-2xl">
               <div className="text-[10px] font-mono text-gold-400 uppercase tracking-widest z-10 flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                <span>Punjab Logistics Vector</span>
+                <span>Punjab Logistics Vector (5 Districts)</span>
               </div>
 
               {/* Map SVG Canvas */}
               <div className="relative w-full h-full my-2">
                 <svg className="absolute inset-0 w-full h-full">
-                  <line x1="45%" y1="55%" x2="68%" y2="65%" stroke="#D4AF37" strokeWidth="1.5" strokeDasharray="3 3" />
-                  <line x1="45%" y1="55%" x2="30%" y2="45%" stroke="#D4AF37" strokeWidth="1.5" strokeDasharray="3 3" />
-                  <line x1="45%" y1="55%" x2="38%" y2="25%" stroke="#D4AF37" strokeWidth="1.5" strokeDasharray="3 3" />
+                  <line x1="48%" y1="55%" x2="72%" y2="65%" stroke="#D4AF37" strokeWidth="1.5" strokeDasharray="3 3" />
+                  <line x1="48%" y1="55%" x2="34%" y2="42%" stroke="#D4AF37" strokeWidth="1.5" strokeDasharray="3 3" />
+                  <line x1="48%" y1="55%" x2="42%" y2="22%" stroke="#D4AF37" strokeWidth="1.5" strokeDasharray="3 3" />
+                  <line x1="48%" y1="55%" x2="16%" y2="55%" stroke="#D4AF37" strokeWidth="1.5" strokeDasharray="3 3" />
                 </svg>
 
                 {districtData.map((d) => {
@@ -180,7 +189,7 @@ export const DistributionMap: React.FC<MapProps> = ({ onOpenEnquiry }) => {
                   <span>Central Logistics Dispatch</span>
                 </div>
                 <p className="text-xs text-slate-300 font-sans font-light">
-                  Scheduled daily logistics fleet servicing Bathinda, Mansa, Muktsar, & Faridkot.
+                  Scheduled daily logistics fleet servicing Bathinda, Mansa, Muktsar, Faridkot, & Fazilka.
                 </p>
               </div>
             </div>

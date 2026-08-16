@@ -12,7 +12,7 @@ interface WholesaleProps {
 export const Wholesale: React.FC<WholesaleProps> = ({ onOpenEnquiry }) => {
   const benefits = [
     { title: 'Authorized Regional Distributor', desc: 'Direct supply contracts with leading global & Indian appliance manufacturers.' },
-    { title: 'Fast 4-District Logistics', desc: 'Daily scheduled dispatches across Bathinda, Mansa, Muktsar, & Faridkot.' },
+    { title: 'Fast 5-District Logistics', desc: 'Daily scheduled dispatches across Bathinda, Mansa, Muktsar, Faridkot, & Fazilka.' },
     { title: 'Dedicated Account Management', desc: 'Personalized trade assistance, bulk order processing, and inventory planning.' },
     { title: 'Factory Original Warranty', desc: 'Every product carries 100% genuine manufacturer warranty backed by brand service networks.' },
     { title: 'Structured Trade Pricing', desc: 'Distributor-level margin structures designed to maximize dealer profitability.' },
@@ -39,7 +39,7 @@ export const Wholesale: React.FC<WholesaleProps> = ({ onOpenEnquiry }) => {
             </h2>
 
             <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-sans font-light">
-              Bansal Enterprises powers electronics retailers, dealers, and institutional partners across Bathinda, Mansa, Sri Muktsar Sahib, and Faridkot with reliable stock availability, transparent trade credit, and direct distributor backing.
+              Bansal Enterprises powers electronics retailers, dealers, and institutional partners across Bathinda, Mansa, Sri Muktsar Sahib, Faridkot, and Fazilka with reliable stock availability, transparent trade credit, and direct distributor backing.
             </p>
 
             <div className="space-y-3 pt-2 font-sans">
@@ -93,17 +93,17 @@ export const Wholesale: React.FC<WholesaleProps> = ({ onOpenEnquiry }) => {
             </div>
 
             <p className="text-xs text-slate-300 leading-relaxed font-sans font-light">
-              Partner with Bansal Enterprises for direct manufacturer pricing, official brand warranty backing, and daily scheduled delivery across all 4 target districts.
+              Partner with Bansal Enterprises for direct manufacturer pricing, official brand warranty backing, and daily scheduled delivery across all 5 target districts.
             </p>
 
             <div className="space-y-3 pt-1 font-sans">
               <div className="flex items-center justify-between p-3.5 rounded-xl bg-navy-950 border border-navy-800 text-xs">
                 <span className="text-slate-300 font-medium">Districts Covered</span>
-                <span className="text-gold-400 font-bold">4 Major Punjab Hubs</span>
+                <span className="text-gold-400 font-bold">5 Major Punjab Hubs</span>
               </div>
               <div className="flex items-center justify-between p-3.5 rounded-xl bg-navy-950 border border-navy-800 text-xs">
                 <span className="text-slate-300 font-medium">Retailer Network</span>
-                <span className="text-gold-400 font-bold">1000+ Active Partners</span>
+                <span className="text-gold-400 font-bold">100+ Active Partners</span>
               </div>
               <div className="flex items-center justify-between p-3.5 rounded-xl bg-navy-950 border border-navy-800 text-xs">
                 <span className="text-slate-300 font-medium">Product Guarantee</span>

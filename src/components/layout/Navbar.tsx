@@ -6,9 +6,10 @@ import { Phone, MessageCircle, Menu, X, Award, MapPin } from 'lucide-react';
 
 interface NavbarProps {
   onOpenEnquiry: (type: 'wholesale' | 'retail') => void;
+  onOpenTeamModal?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry, onOpenTeamModal }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -30,6 +31,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry }) => {
     { label: 'Contact', href: '#contact' },
   ];
 
+  const handleInquiryClick = () => {
+    if (onOpenTeamModal) {
+      onOpenTeamModal();
+    } else {
+      onOpenEnquiry('retail');
+    }
+  };
+
   return (
     <>
       {/* Topmost Micro Info Announcement Bar */}
@@ -38,28 +47,29 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry }) => {
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-1.5 text-gold-400 font-medium">
               <Award className="w-3.5 h-3.5 text-gold-400" />
-              Established 2004 • 20+ Years Regional Distribution Excellence
+              Established 2017 • 30+ Years Trade Experience
             </span>
             <span className="flex items-center gap-1 text-slate-400">
               <MapPin className="w-3.5 h-3.5 text-gold-400/80" />
-              Bathinda • Mansa • Muktsar • Faridkot
+              Bathinda • Mansa • Muktsar • Faridkot • Fazilka
             </span>
           </div>
           <div className="flex items-center gap-4">
-            <a href="tel:9988096592" className="hover:text-gold-400 transition-colors flex items-center gap-1">
+            <button
+              onClick={handleInquiryClick}
+              className="hover:text-gold-400 transition-colors flex items-center gap-1 text-slate-300"
+            >
               <Phone className="w-3 h-3 text-gold-400" />
-              +91 99880 96592
-            </a>
+              Distribution Direct Contacts
+            </button>
             <span className="text-slate-700">|</span>
-            <a
-              href="https://wa.me/919988096592"
-              target="_blank"
-              rel="noreferrer"
+            <button
+              onClick={handleInquiryClick}
               className="hover:text-emerald-400 transition-colors flex items-center gap-1 text-emerald-400 font-medium"
             >
               <MessageCircle className="w-3 h-3" />
               Trade Desk Direct
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -85,7 +95,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry }) => {
                 BANSAL <span className="text-gold-400 font-light">ENTERPRISES</span>
               </span>
               <span className="text-[9px] text-slate-400 tracking-widest uppercase block font-sans">
-                AUTHORISED REGIONAL DISTRIBUTOR • EST. 2004
+                AUTHORISED REGIONAL DISTRIBUTOR • EST. 2017
               </span>
             </div>
           </a>
@@ -112,7 +122,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry }) => {
               Become a Channel Partner
             </button>
             <button
-              onClick={() => onOpenEnquiry('retail')}
+              onClick={handleInquiryClick}
               className="text-xs font-bold px-4 py-2 rounded-lg bg-gold-gradient text-navy-950 shadow-gold-glow hover:brightness-110 transition-all"
             >
               Distribution Inquiry
@@ -166,7 +176,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry }) => {
                 <button
                   onClick={() => {
                     setMobileMenuOpen(false);
-                    onOpenEnquiry('retail');
+                    handleInquiryClick();
                   }}
                   className="w-full py-2.5 text-xs font-bold rounded-lg bg-gold-gradient text-navy-950 transition-all"
                 >

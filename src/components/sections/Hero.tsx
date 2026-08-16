@@ -7,10 +7,11 @@ import Image from 'next/image';
 
 interface HeroProps {
   onOpenEnquiry: (type: 'wholesale' | 'retail') => void;
+  onOpenTeamModal?: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry }) => {
-  // Apple/Stripe-Inspired Floating Hero Collage Cards (Fit 100% in 70-75vh Viewport)
+export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry, onOpenTeamModal }) => {
+  // Apple/Stripe-Inspired Floating Hero Collage Cards featuring 100% Executive Leadership & Certification Photos
   const floatingCards = [
     {
       id: 'media-focal',
@@ -27,36 +28,36 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry }) => {
       title: 'Bathinda Corporate Hub',
       tag: 'Central Facility',
       image: '/images/showroom.jpg',
-      // MEDIUM STOREFRONT CARD (Landscape crop, 20% reduced height: 250x155) - Top-Right
+      // MEDIUM STOREFRONT CARD (Landscape crop: 250x155) - Top-Right
       pos: 'top-0 right-2 sm:right-4 w-[210px] h-[135px] sm:w-[240px] sm:h-[150px] z-30 border border-gold-500/30',
       delay: 0.2,
       floatY: [0, -5, 0],
     },
     {
-      id: 'samsung-tv-medium',
-      title: 'Samsung 4K OLED TV',
-      tag: 'Display Systems',
-      image: '/images/categories/televisions.jpg',
-      // MEDIUM PRODUCT CARD (240x150) - Staggered Center-Left
-      pos: 'top-[200px] left-8 sm:left-14 w-[210px] h-[135px] sm:w-[240px] sm:h-[150px] z-35 border border-gold-500/30',
+      id: 'amstrad-executives',
+      title: 'Amstrad Owner & Regional Leadership',
+      tag: 'Executive Summit',
+      image: '/images/events/amstrad-executives.jpg',
+      // MEDIUM EXECUTIVE CARD (240x150) - Staggered Center-Left
+      pos: 'top-[200px] left-8 sm:left-14 w-[210px] h-[135px] sm:w-[240px] sm:h-[150px] z-35 border-2 border-gold-400/80 shadow-gold-glow',
       delay: 0.4,
       floatY: [0, -7, 0],
     },
     {
-      id: 'lg-fridge-small',
-      title: 'LG Side-by-Side Fridge',
-      tag: 'Smart Cooling',
-      image: '/images/categories/lg-refrigerator-v2.jpg',
-      // SMALL SUPPORTING CARD (190x130) - Staggered Center-Right
-      pos: 'top-[160px] right-0 sm:right-2 w-[170px] h-[120px] sm:w-[190px] sm:h-[130px] z-25 border border-gold-500/30',
+      id: 'kenstar-executives',
+      title: 'Kenstar Official Authorised Certification',
+      tag: 'Brand Certification',
+      image: '/images/events/kenstar-executives.jpg',
+      // SMALL SUPPORTING CARD (190x130) - Staggered Center-Right (Features Kenstar Branch & Area Manager presenting Certificate)
+      pos: 'top-[160px] right-0 sm:right-2 w-[170px] h-[120px] sm:w-[190px] sm:h-[130px] z-25 border-2 border-gold-400/80 shadow-gold-glow',
       delay: 0.6,
       floatY: [0, -5, 0],
     },
     {
-      id: 'voltas-ac-small',
-      title: 'Voltas Split AC',
-      tag: 'Climate Control',
-      image: '/images/categories/air-conditioners.jpg',
+      id: 'product-launch',
+      title: 'Product Launch Ceremony',
+      tag: 'Brand Partnership',
+      image: '/images/events/product-launch.jpg',
       // SMALL SUPPORTING CARD (180x120) - Bottom-Right Accent
       pos: 'bottom-2 right-10 sm:right-16 w-[160px] h-[110px] sm:w-[180px] sm:h-[120px] z-30 border border-gold-500/30',
       delay: 0.8,
@@ -67,10 +68,18 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry }) => {
   // Mobile product showcase tiles (for screens < 768px)
   const mobileShowcase = [
     { title: 'Official Media Coverage', image: '/images/events/media-interview.jpg' },
+    { title: 'Kenstar Authorised Certification', image: '/images/events/kenstar-executives.jpg' },
+    { title: 'Amstrad Owner & Leadership', image: '/images/events/amstrad-executives.jpg' },
     { title: 'Bathinda Corporate Hub', image: '/images/showroom.jpg' },
-    { title: 'LG Side-by-Side Fridge', image: '/images/categories/lg-refrigerator-v2.jpg' },
-    { title: 'Samsung 4K OLED TV', image: '/images/categories/televisions.jpg' },
   ];
+
+  const handleTeamClick = () => {
+    if (onOpenTeamModal) {
+      onOpenTeamModal();
+    } else {
+      onOpenEnquiry('retail');
+    }
+  };
 
   return (
     <section className="relative min-h-[88vh] bg-navy-950 text-white overflow-hidden flex items-center border-b border-navy-800 py-12 sm:py-16">
@@ -89,7 +98,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry }) => {
             {/* 1. Hero Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-900 border border-gold-500/30 text-gold-400 text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-8">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>ESTABLISHED 2004 • AUTHORISED REGIONAL DISTRIBUTOR</span>
+              <span>ESTABLISHED 2017 • 30+ YEARS INDUSTRY LEADERSHIP</span>
             </div>
 
             {/* 2. Main Heading (LARGEST TEXT ON PAGE - Brand First) */}
@@ -99,12 +108,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry }) => {
 
             {/* 3. Supporting Heading */}
             <h2 className="text-xl sm:text-3xl lg:text-[32px] font-medium text-white tracking-tight leading-snug mb-6">
-              Punjab's Trusted Regional Electronics Distributor Since 2004
+              Punjab's Trusted Regional Electronics Distributor Since 2017
             </h2>
 
             {/* 4. Corporate Description */}
             <p className="text-slate-300 text-sm sm:text-base font-sans font-light max-w-xl leading-relaxed mb-9">
-              Authorised regional distributor of leading consumer electronics and home appliance brands across Bathinda, Mansa, Muktsar and Faridkot. For over two decades, Bansal Enterprises has supplied retailers, dealers and business partners with trusted brands, reliable inventory and efficient regional logistics.
+              Authorised regional distributor for <strong className="text-white font-semibold">Amstrad, Tomashi, Kenstar, Liebherr, KAFF & Nova Max</strong> across Bathinda, Mansa, Muktsar, Faridkot and Fazilka. Founded by Mr. Rakesh Bansal with over 30 years of industry experience, Bansal Enterprises supplies retailers, dealers and business partners with trusted brands, reliable inventory and efficient regional logistics.
             </p>
 
             {/* 5. Apple-Style B2B CTA Buttons (56px height, equal width) */}
@@ -118,8 +127,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry }) => {
               </button>
 
               <button
-                onClick={() => onOpenEnquiry('retail')}
-                className="w-full sm:w-56 h-14 rounded-xl border-2 border-gold-500/40 bg-navy-900/80 hover:bg-navy-900 text-gold-400 font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
+                onClick={handleTeamClick}
+                className="w-full sm:w-56 h-14 rounded-xl border-2 border-gold-500/40 bg-navy-900/80 hover:bg-navy-900 text-gold-400 font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors flex items-center justify-center gap-2 shadow-lg"
               >
                 <FileText className="w-4 h-4 text-gold-400" />
                 <span>Contact Distribution Team</span>
@@ -131,15 +140,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry }) => {
               <div className="flex flex-col">
                 <div className="flex items-center gap-1.5 text-gold-400 mb-1">
                   <Award className="w-4 h-4 shrink-0" />
-                  <span className="font-serif text-lg font-bold text-white">20+ Years</span>
+                  <span className="font-serif text-lg font-bold text-white">30+ Years</span>
                 </div>
-                <span className="text-[11px] text-slate-400 font-medium">Experience</span>
+                <span className="text-[11px] text-slate-400 font-medium font-sans">Trade Experience</span>
               </div>
 
               <div className="flex flex-col">
                 <div className="flex items-center gap-1.5 text-gold-400 mb-1">
                   <Users className="w-4 h-4 shrink-0" />
-                  <span className="font-serif text-lg font-bold text-white">1000+</span>
+                  <span className="font-serif text-lg font-bold text-white">100+</span>
                 </div>
                 <span className="text-[11px] text-slate-400 font-medium">Dealer Network</span>
               </div>
@@ -147,15 +156,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry }) => {
               <div className="flex flex-col">
                 <div className="flex items-center gap-1.5 text-gold-400 mb-1">
                   <ShieldCheck className="w-4 h-4 shrink-0" />
-                  <span className="font-serif text-lg font-bold text-white">12+</span>
+                  <span className="font-serif text-lg font-bold text-white">6 Brands</span>
                 </div>
-                <span className="text-[11px] text-slate-400 font-medium">Premium Brands</span>
+                <span className="text-[11px] text-slate-400 font-medium">Authorised Supply</span>
               </div>
 
               <div className="flex flex-col">
                 <div className="flex items-center gap-1.5 text-gold-400 mb-1">
                   <Building2 className="w-4 h-4 shrink-0" />
-                  <span className="font-serif text-lg font-bold text-white">4 District</span>
+                  <span className="font-serif text-lg font-bold text-white">5 District</span>
                 </div>
                 <span className="text-[11px] text-slate-400 font-medium">Logistics Reach</span>
               </div>
